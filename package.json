@@ -1,6 +1,6 @@
 {
   "name": "@me3d/async-logic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An Asynchronous framework for logical operands in NodeJS",
   "main": "index.js",
   "dependencies": {
