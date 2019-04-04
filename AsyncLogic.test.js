@@ -152,3 +152,44 @@ for (const A of [TRUE, FALSE]) {
         }
     }
 }
+
+
+
+// Does not perform boolean coercion
+test(`Or operator does not perform boolean coercion`, async () => {
+    const truthy = jest.fn().mockResolvedValue('truthy');
+    const falsy = jest.fn().mockResolvedValue(null);
+
+    const logic = new AsyncLogic(new AsyncOr(truthy, falsy))
+    const result = await logic.compute()
+    expect(result).toBe('truthy')
+})
+
+test(`And operator does not perform boolean coercion`, async () => {
+    const truthy = jest.fn().mockResolvedValue('truthy');
+
+    const logic = new AsyncLogic(new AsyncAnd(truthy, truthy))
+    const result = await logic.compute()
+    expect(result).toBe('truthy')
+})
+
+// Preserves chaining behaviour from standard booleans
+test(`Or preserves chaining behaviour from standard booleans`, async () => {
+    const truthy1 = jest.fn().mockResolvedValue('truthy1');
+    const truthy2 = jest.fn().mockResolvedValue('truthy2');
+    const falsy = jest.fn().mockResolvedValue(null);
+
+    const logic = new AsyncLogic(new AsyncOr(falsy, falsy, falsy, truthy1, truthy2, falsy))
+    const result = await logic.compute()
+    expect(result).toBe('truthy1')
+})
+
+test(`And preserves chaining behaviour from standard booleans`, async () => {
+    const truthy = jest.fn().mockResolvedValue('truthy');
+    const falsy1 = jest.fn().mockResolvedValue(undefined);
+    const falsy2 = jest.fn().mockResolvedValue(null);
+
+    const logic = new AsyncLogic(new AsyncAnd(truthy, truthy, truthy, falsy1, falsy2, truthy))
+    const result = await logic.compute()
+    expect(result).toBe(undefined)
+})
