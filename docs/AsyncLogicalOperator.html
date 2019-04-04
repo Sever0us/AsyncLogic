@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: AsyncLogic</title>
+    <title>JSDoc: Class: AsyncLogicalOperator</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: AsyncLogic</h1>
+    <h1 class="page-title">Class: AsyncLogicalOperator</h1>
 
     
 
@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>AsyncLogic<span class="signature">(child)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature">(package) </span></span>AsyncLogicalOperator<span class="signature">(&hellip;children)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -41,7 +41,7 @@
     
 
     
-    <h4 class="name" id="AsyncLogic"><span class="type-signature"></span>new AsyncLogic<span class="signature">(child)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="AsyncLogicalOperator"><span class="type-signature">(package) </span>new AsyncLogicalOperator<span class="signature">(&hellip;children)</span><span class="type-signature"></span></h4>
     
 
     
@@ -49,7 +49,7 @@
 
 
 <div class="description">
-    The root async logic environment which should be instantiated around any Async logical operators
+    The superclass for all other async logic operators. Cannot be used directly.
 </div>
 
 
@@ -73,6 +73,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -85,12 +87,18 @@
 
         <tr>
             
-                <td class="name"><code>child</code></td>
+                <td class="name"><code>children</code></td>
             
 
             <td class="type">
             
                 
+<span class="param-type">function</span>
+|
+
+<span class="param-type">async-function</span>
+|
+
 <span class="param-type"><a href="AsyncOr.html">AsyncOr</a></span>
 |
 
@@ -104,10 +112,20 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
 
             
 
-            <td class="description last">The root operator for an async logic operator</td>
+            <td class="description last">Operands can either be functions which return a value to be evaluated or a nested logic operator</td>
         </tr>
 
     
@@ -148,7 +166,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line10">line 10</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -202,7 +220,7 @@
     
 
     
-    <h4 class="name" id="compute"><span class="type-signature">(async) </span>compute<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="compute"><span class="type-signature">(async, package) </span>compute<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -210,7 +228,7 @@
 
 
 <div class="description">
-    The method to call to execute the comparison and return the appropriate reference value.
+    Utility function which computes the logical result of the operators children
 </div>
 
 
@@ -254,7 +272,93 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line19">line 19</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line60">line 60</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getPromises"><span class="type-signature">(package) </span>getPromises<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Utility function which returns the list of promises for the operators children
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line51">line 51</a>
     </li></ul></dd>
     
 

@@ -1,5 +1,7 @@
 # AsyncLogic
-An Asynchronous framework for logical operands in NodeJS
+An Asynchronous framework for logical operands in NodeJS.
+
+[See full API docs here](https://theinsomnolent.github.io/AsyncLogic/)
 
 
 ## Installing
