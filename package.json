@@ -7,11 +7,13 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
-    "jest": "^24.5.0"
+    "jest": "^24.5.0",
+    "jsdoc": "^3.5.5"
   },
   "scripts": {
     "test": "yarn jest",
-    "watch": "yarn jest --watch"
+    "watch": "yarn jest --watch",
+    "buildDocs": "rm -r docs && yarn jsdoc index.js README.md && mv out docs"
   },
   "repository": {
     "type": "git",

@@ -63,3 +63,7 @@ typings/
 
 #test install dir
 test
+
+
+# OSX Files
+.DS_Store
