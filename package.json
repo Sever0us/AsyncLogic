@@ -1,6 +1,6 @@
 {
   "name": "@me3d/async-logic",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An Asynchronous framework for logical operands in NodeJS",
   "main": "index.js",
   "dependencies": {
@@ -28,5 +28,5 @@
   "bugs": {
     "url": "https://github.com/Sever0us/AsyncLogic/issues"
   },
-  "homepage": "https://github.com/Sever0us/AsyncLogic#readme"
+  "homepage": "https://theinsomnolent.github.io/AsyncLogic/"
 }
